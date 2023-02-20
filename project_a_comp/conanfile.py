@@ -1,7 +1,7 @@
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
 
-COMPONENT_NAME_PROJECT_A = "ProjectA"
+COMPONENT_NAME_PROJECT_A = "ProjectAComp"
 
 
 class PrjACompConan(ConanFile):

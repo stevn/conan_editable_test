@@ -102,7 +102,7 @@ The Conan build (`conan build .`) of component-based project B fails with the fo
 
 ```bash
 
--- Conan: Component target declared 'prj_a_comp::ProjectA'
+-- Conan: Component target declared 'prj_a_comp::ProjectAComp'
 -- Conan: Target declared 'prj_a_comp::prj_a_comp'
 CMake Error at build/generators/cmakedeps_macros.cmake:39 (message):
   Library 'prj_a_comp' not found in package.  If 'prj_a_comp' is a system
