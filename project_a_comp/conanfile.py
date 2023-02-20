@@ -29,6 +29,8 @@ class PrjACompConan(ConanFile):
 
     def layout(self):
         cmake_layout(self)
+        self.cpp.source.components[COMPONENT_NAME_PROJECT_A].includedirs = self.cpp.source.includedirs
+        self.cpp.build.components[COMPONENT_NAME_PROJECT_A].libdirs = self.cpp.build.libdirs
 
     def generate(self):
         tc = CMakeToolchain(self)
