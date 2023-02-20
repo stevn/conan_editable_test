@@ -22,7 +22,7 @@ Make project A editable and build it:
     conan install . -s:b build_type=Release -s:h build_type=Debug
     conan build .
 
-### Create project B
+### Build project B
 
     mkdir project_b
     cd project_b
@@ -58,7 +58,7 @@ Make component-based project A editable and build it:
     conan install . -s:b build_type=Release -s:h build_type=Debug
     conan build .
 
-### Create component-based project B
+### Build component-based project B
 
     mkdir project_b_comp
     cd project_b_comp
