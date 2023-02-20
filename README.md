@@ -24,7 +24,7 @@ I am not sure how to fix this via package info?
 
 For more details on how this test was created, keep reading..
 
-## Normal approach (without components)
+## Normal approach (editable mode, but without components)
 
 This works as expected as far as I can tell.
 
@@ -59,7 +59,7 @@ Build project B (link against 'editable' project A):
 
 It works!
 
-## Component-based approach (broken)
+## Component-based approach (broken: editable mode with components)
 
 This is probably broken as far as I can tell. It matches the 'normal' approach in all regards except that it uses components.
 
@@ -124,7 +124,7 @@ ERROR: conanfile.py (prj_b_comp/1.0.0): Error in build() method, line 37
 
 Conan fails to find the library prj_a_comp for that component.
 
-### Workaround: Build component-based project B with component-based project A in Conan cache
+### Workaround 1: use Conan cache, not editable mode
 
 In order to build component-based project B, we can turn off the editable mode of component-based project A.
 
@@ -143,4 +143,10 @@ This example shows that Conan components in general work correctly and are confi
 
 However, now we have disabled editable mode.
 
-*So: It looks like the error only happens when combining both Conan features: editable mode + components.*
+### Workaround 2: use editable mode, but don't use components
+
+...
+
+## Conclusion
+
+*It looks like the error only happens when combining both Conan features: editable mode + components.*
