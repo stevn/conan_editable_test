@@ -37,6 +37,10 @@ Build project B (link against 'editable' project A):
     conan build .
     build/Debug/prj_b
 
+### Success
+
+It works!
+
 ## Component-based approach (broken)
 
 This is probably broken as far as I can tell. It matches the 'normal' approach in all regards except that it uses components.
@@ -99,3 +103,5 @@ ERROR: conanfile.py (prj_b_comp/1.0.0): Error in build() method, line 37
         ConanException: Error 1 while executing cmake -G "Visual Studio 16 2019" -DCMAKE_TOOLCHAIN_FILE="conan_editable_test/project_b_comp/build/generators/conan_toolchain.cmake" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" "conan_editable_test\project_b_comp\."
 
 ```
+
+Conan fails to find the library prj_a_comp for that component.
