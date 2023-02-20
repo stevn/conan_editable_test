@@ -80,7 +80,7 @@ Make component-based project A editable and build it:
     conan install . -s:b build_type=Release -s:h build_type=Debug
     conan build .
 
-### Build component-based project B
+### Build component-based project B with project A in editable mode
 
     mkdir project_b_comp
     cd project_b_comp
@@ -123,3 +123,24 @@ ERROR: conanfile.py (prj_b_comp/1.0.0): Error in build() method, line 37
 ```
 
 Conan fails to find the library prj_a_comp for that component.
+
+### Workaround: Build component-based project B with component-based project A in Conan cache
+
+In order to build component-based project B, we can turn off the editable mode of component-based project A.
+
+This can be used as workaround because Conan editable mode seems to be broken.
+
+    conan editable remove prj_a_comp/1.0.0@test/develop
+    cd project_a_comp
+    conan create . test/develop -s:b build_type=Release -s:h build_type=Debug
+    cd ../project_b_comp
+    conan install . -s:b build_type=Release -s:h build_type=Debug
+    conan build .
+
+The build works. Conan create of project B also works.
+
+This example shows that Conan components in general work correctly and are configured correctly in this test.
+
+However, now we have disabled editable mode.
+
+*So: It looks like the error only happens when combining both Conan features: editable mode + components.*
