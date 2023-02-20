@@ -145,7 +145,7 @@ However, now we have disabled editable mode.
 
 ### Workaround 2: use editable mode, but don't use components
 
-...
+See section 'Normal approach' above...
 
 ## Conclusion
 
