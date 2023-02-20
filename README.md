@@ -1,5 +1,7 @@
 # Conan editable mode tests
 
+Test project for https://github.com/conan-io/conan/issues/13177
+
 Tested with:
 
 - Conan client version: 1.59.0
