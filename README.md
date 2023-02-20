@@ -6,6 +6,24 @@ Tested with:
 - Windows 10
 - Python 3.10.5
 
+## Quick Reproduction of Error state (TLDR)
+
+To reproduce run the following commands:
+
+    cd project_a_comp
+    conan editable add . prj_a_comp/1.0.0@test/develop
+    conan install . -s:b build_type=Release -s:h build_type=Debug
+    conan build .
+    cd ../project_b_comp
+    conan install . -s:b build_type=Release -s:h build_type=Debug
+    conan build .
+
+You will get a CMake Error:  Library 'prj_a_comp' not found in package.
+
+I am not sure how to fix this via package info?
+
+For more details on how this test was created, keep reading..
+
 ## Normal approach (without components)
 
 This works as expected as far as I can tell.
